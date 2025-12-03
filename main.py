@@ -1,20 +1,16 @@
 import json
 from datetime import datetime
 
-# ==============================
-#   CONFIGURATION
-# ==============================
+
 
 NOTES_FILE = "notes.json"
 
 # Simple password for login (bonus: password protection)
-# You can change it to whatever you want.
+
 APP_PASSWORD = "1234"
 
 
-# ==============================
-#   FILE HANDLING
-# ==============================
+
 
 def load_notes():
     """
@@ -37,7 +33,7 @@ def save_notes(notes):
 
 
 # ==============================
-#   UI HELPERS (ASCII STYLE)
+  
 # ==============================
 
 def print_header(title):
@@ -70,7 +66,6 @@ def print_note(idx, note):
 def add_note(notes):
     """
     Add a new note to the list.
-    Bonus: automatically add timestamp using datetime.
     """
     print_header("Add a New Note")
 
@@ -190,11 +185,7 @@ def filter_by_tag(notes):
 
 
 def edit_note(notes, index=None):
-    """
-    Edit an existing note.
-    If index is None, ask the user which note to edit.
-    (Used both from main menu and from search bonus.)
-    """
+    
     print_header("Edit a Note")
 
     if not notes:
@@ -240,7 +231,7 @@ def edit_note(notes, index=None):
 def delete_note_by_index(notes, index):
     """
     Delete a note by its list index (0-based).
-    This helper is used both from the main menu and from search bonus.
+    
     """
     note = notes[index]
     confirm = input(f"Are you sure you want to delete '{note['title']}'? (y/n): ").strip().lower()
@@ -278,7 +269,7 @@ def delete_note(notes):
 
 
 # ==============================
-#   BONUS: SORTING
+#   BONUS:
 # ==============================
 
 def sort_notes(notes):
@@ -319,10 +310,7 @@ def sort_notes(notes):
 # ==============================
 
 def login():
-    """
-    Simple login for password protection (bonus).
-    Very basic: compares the input to APP_PASSWORD.
-    """
+    
     print_header("Notebook Login")
 
     for attempt in range(3):
